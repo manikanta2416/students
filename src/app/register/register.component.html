@@ -1,0 +1,17 @@
+<form [formGroup]="usersform" (ngSubmit)="register(usersform.value)">
+    <div class="form-group">
+ <input type="text" class="form-control" formControlName="Name" placeholder="Your Name"> 
+<span style="color: red;"*ngIf="usersform.get('Name') && usersform.get('Name')?.invalid && usersform.get('Name')?.touched">this field is required</span>  <br><br>
+ <input type="text" class="form-control" formControlName="phonenumber" placeholder="Phone Number">  
+ <span style="color: red;"*ngIf="usersform.get('phonenumber') && usersform.get('phonenumber')?.invalid && usersform.get('phonenumber')?.touched">password field is required</span>  <br><br>
+
+ <input type="text" class="form-control" formControlName="password" placeholder="Your Password">                     
+ <input type="text" class="form-control" formControlName="confirmPassword" placeholder="Confirm Password"> 
+ <input type="email" class="form-control" formControlName="email" placeholder="Enter email"> 
+ <input type="text" class="form-control" formControlName="address" placeholder="Enter address"> 
+</div>
+ <button  [disabled]="usersform.invalid" type="submit" class="btn btn-primary"> Register </button>  
+ <button  type="reset" class="btn btn-warning"> Reset </button>  
+
+
+</form>
